@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Test Crypto Webhook</title>
+</head>
+<body>
+  <h2>ส่งข้อมูลไปยัง Webhook n8n</h2>
+  <button onclick="sendData()">ส่งข้อมูล</button>
+
+  <script>
+    function sendData() {
+      fetch("https://leonado25.app.n8n.cloud/webhook/crypto-alert", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          symbol: "THB_BTC",
+          target: 1800000
+        })
+      })
+      .then(res => res.text())
+      .then(res => alert("ส่งข้อมูลสำเร็จ"))
+      .catch(err => alert("ผิดพลาด"));
+    }
+  </script>
+</body>
+</html>

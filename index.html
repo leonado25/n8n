@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
+  <meta charset="UTF-8">
   <title>Test Crypto Webhook</title>
 </head>
 <body>
@@ -9,7 +10,7 @@
 
   <script>
     function sendData() {
-      fetch("https://leonado25.app.n8n.cloud/webhook/crypto-alert", {
+      fetch("https://leonado25.app.n8n.cloud/webhook-test/crypto-alert", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
